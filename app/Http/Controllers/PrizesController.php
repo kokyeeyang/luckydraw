@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Auth;
 
 class PrizesController extends Controller
 {
@@ -14,8 +15,13 @@ class PrizesController extends Controller
     public function index()
     {
         //
-        $hello = "timbuk2";
-        return view('index', compact('hello'));
+
+        if (Auth::guest()){
+            return view('login');
+        } else {
+            $hello = "timbuk2";
+            return view('index', compact('hello'));
+        }
 
     }
 

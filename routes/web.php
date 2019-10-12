@@ -17,7 +17,7 @@ Route::get('/', function () {
 
 Route::get('/prizes', 'PrizesController@index');
 
-Route::get('/login', 'MainController@index');
+// Route::get('/login', 'MainController@index');
 
 Route::get('/main', 'MainController@index');
 Route::post('/main/checkLogin', 'MainController@checkLogin');
