@@ -14,3 +14,17 @@
 Route::get('/', function () {
     return view('welcome');
 });
+
+Route::get('/prizes', 'PrizesController@index');
+
+Route::get('/login', 'MainController@index');
+
+Route::get('/main', 'MainController@index');
+Route::post('/main/checkLogin', 'MainController@checkLogin');
+Route::get('main/successLogin', 'MainController@successLogin');
+Route::get('main/logout', 'MainController@logout');
+
+
+Route::group(['middleware' => ['web']], function () {
+
+}); 
